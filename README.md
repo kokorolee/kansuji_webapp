@@ -1,24 +1,28 @@
-# README
+# Bài tập
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hãy tạo library chuyển đổi kanji và kí tự số 
 
-Things you may want to cover:
+## Ví dụ
+- 1.to_kansuji #=> "一"
+- "一".to_number #=> 1
 
-* Ruby version
+# Kiến trúc môi trường
 
-* System dependencies
+Install ruby2.3 trở lên (recommend rbenv)
 
-* Configuration
+$ bundle install
 
-* Database creation
+# Đánh giá
 
-* Database initialization
+Sẽ pass ↓
+```sh
+$ bundle exec rspec
+```
 
-* How to run the test suite
+Ngoài ra, cần lưu ý các điểm sau 
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Không thay đổi spec/lib/acceptance_spec.rb
+- Viết code vào lib/kansuji.rb、spec/lib/kansuji_spec.rb, nếu không có lí do đặc biệt thì không thay đổi file khác 
+- Tôi muốn file lib/kansuji.rb sẽ có khoảng dưới 50 line 
+- Làm TDD dùng rspec để code (Test-driven development)
+- Vì file spec/lib/acceptance_spec.rb đã được viết từ vài năm trước nên đừng tham khảo khi dùng rspec
