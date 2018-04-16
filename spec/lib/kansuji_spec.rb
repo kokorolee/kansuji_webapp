@@ -3,20 +3,28 @@ require 'kansuji'
 
 describe 'Kansuji' do
   context '10 ** 1 ' do
+    it '0' do
+      '0'.to_kansuji.should == '零'
+      # '一'.to_number.should == '1'
+    end
     it '1' do
       '1'.to_kansuji.should == '一'
+      # '一'.to_number.should == '1'
     end
     it '01' do
       '01'.to_kansuji.should == '一'
     end
     it '10' do
       '10'.to_kansuji.should == '十'
+      # '十'.to_number.should == '10'
     end
     it '11' do
       '11'.to_kansuji.should == '十一'
+      # '十一'.to_kansuji.should == '11'
     end
     it '23' do
       '23'.to_kansuji.should == '二十三'
+      # '二十三'.to_kansuji.should == '23'
     end
   end
   context '10 ** 2 ' do
