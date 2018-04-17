@@ -1,4 +1,3 @@
-require 'pry'
 NUMS_HASH = { 0 => "零", 1 => "一", 2 => "二", 3 => "三", 4 => "四", 5 => "五", 6 => "六", 7 => "七", 8 => "八", 9 => "九"}
 UNIT_HASH = { 10 ** 1 => "十", 10 ** 2 => "百", 10 ** 3 => "千"}
 EXP_HASH = { 10 ** (4)  => '万', 10 ** (4*2) => "億", 10 ** (4*3) => "兆" , 10 ** (4*4) => "京", 10 ** (4*5) => "垓", 10 ** (4*6) => "𥝱", 10 ** (4*7) => "穣", 10 ** (4*8) => "溝", 10 ** (4*9) => "澗", 10 ** (4*10) => "正", 10 ** (4*11) => "載", 10 ** (4*12) => "極", 10 ** (4*13) => "恒河沙", 10 ** (4*14) => "阿僧祇", 10 ** (4*15) => "那由他", 10 ** (4*16) => "不可思議", 10 ** (4*17) => "無量大数" }
@@ -9,7 +8,7 @@ class Numeric
     arr_size = reverse_array.size
     return rs.join if reverse_array.each do | val |
       (val.reverse.join().to_i == 0) ? (next arr_size -= 1) : rs << val.reverse.join().to_i.group_f_to
-      rs << EXP_HASH[10 ** (4 * (arr_size - 1))] if val.reverse.join() != 0 && (arr_size - 1) > 0
+      rs << EXP_HASH[10 ** (4 * (arr_size - 1))] if val.reverse.join() != 0
       arr_size -= 1
     end
   end
@@ -29,43 +28,28 @@ class String
     EXP_HASH.each do |key, val|
       self.sub!(val,'\&,')
     end
-    temp1 = self.split(",")
+    temp1 = self.split(",")    #print "\n temp1"    print temp1    print "\n"
     temp1.each do |num|
-      EXP_HASH.each do |key, val|
+      temp2 << num.split(",") if EXP_HASH.each do |key, val|
         num.sub!(val,',\&')
       end
-      temp2 << num.split(",")
-    end
-    print temp2
-    print "\n"
-    temp2.each do |num|
+    end    #print "\n temp2"    print temp2    print "\n"
+    return result if temp2.each do |num|
       ac_num = 0
       kan2num = 1
       kan2num = EXP_HASH.key(num[1]) unless num[1] == nil
       UNIT_HASH.each do |key, val|
         num[0].sub!(val,'\&,')
       end
-      temp3 = num[0].split(",")
-      temp3.each do |n|
-        unless n[1] == nil
+      temp3 = num[0].split(",")      #print "\n temp3"      print temp3      print "\n"
+      result += ac_num * kan2num if temp3.each do |n|
+        if !n[1].nil?
           ac_num += (NUMS_HASH.key(n[0]).to_i) * (UNIT_HASH.key(n[1]))
         else
-          if !NUMS_HASH.key(n[0]).nil?
-            ac_num += NUMS_HASH.key(n[0]).to_i
-          else
-            ac_num += UNIT_HASH.key(n[0])
-          end
+          ac_num += NUMS_HASH.key(n[0]).to_i if !NUMS_HASH.key(n[0]).nil?
+          ac_num += UNIT_HASH.key(n[0]).to_i
         end
       end
-      result += ac_num * kan2num
     end
-  result
   end
 end
-
-  # input = gets.chomp
-  # input = '千百十一不可思議五万千四百七十一'
-  # puts input.to_number
-  # puts input.to_i.to_kansuji
-  # puts unit_hash(100)
-  # number = inputs >= 10 ** 4 && inputs < 10 ** (4*2) ? 8 : inputs >= 10 ** 3 && inputs < 10 ** 4 ? 3 : inputs >= 10 ** 1 && inputs < 10 ** 2 ? 2 : 1
