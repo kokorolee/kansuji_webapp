@@ -24,10 +24,11 @@ $ bundle exec rspec
 # Document
 https://en.wikipedia.org/wiki/Japanese_numerals 
 
-Ngoài ra, cần lưu ý các điểm sau 
 
-- Không thay đổi spec/lib/acceptance_spec.rb
-- Viết code vào lib/kansuji.rb、spec/lib/kansuji_spec.rb, nếu không có lí do đặc biệt thì không thay đổi file khác 
-- Tôi muốn file lib/kansuji.rb sẽ có khoảng dưới 50 line 
-- Làm TDD dùng rspec để code (Test-driven development)
-- Vì file spec/lib/acceptance_spec.rb đã được viết từ vài năm trước nên đừng tham khảo khi dùng rspec
+-In addition, the following points should be noted
+
+- Do not change spec / lib / acceptance_spec.rb
+- Write the code in lib / kansuji.rb, spec / lib / kansuji_spec.rb, if there is no special reason, do not change the file.
+- I want the lib / kansuji.rb file to be under 50 lines
+- Make TDD using rspec for code (Test-driven development)
+- Since the spec / lib / acceptance_spec.rb file was written a few years ago, do not use rspec.
