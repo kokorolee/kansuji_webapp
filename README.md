@@ -21,6 +21,8 @@ Sẽ pass ↓
 ```sh
 $ bundle exec rspec
 ```
+# Document
+https://en.wikipedia.org/wiki/Japanese_numerals 
 
 Ngoài ra, cần lưu ý các điểm sau 
 
