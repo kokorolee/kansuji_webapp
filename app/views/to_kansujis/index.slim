@@ -3,7 +3,7 @@
     |Number to Kanji
   div.form-group
     form.text-center action=to_kansujis_path
-      input.col-xs-12.form-control name='input' type='number'
+      input.col-xs-12.form-control name='input' type='text'
       input.btn.btn-primary type='submit' value='Translate to Kanji'
   .panel.panel-info
     .panel-heading
@@ -11,11 +11,13 @@
         | Your input:
         = @exp
     .panel-body
-      = @input
+      h3
+        = @input
   .panel.panel-success
     .panel-heading
       h4 Result:
     .panel-body
-      = @result
+      h3
+        = @result
 =render 'layouts/link_to_orther'
 = render 'layouts/footer'
