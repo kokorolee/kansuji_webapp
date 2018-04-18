@@ -1,3 +1,7 @@
+```link
+Result
+https://kansuji.herokuapp.com/to_kansujis
+
 # Bài tập
 
 Hãy tạo library chuyển đổi kanji và kí tự số 
