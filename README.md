@@ -1,5 +1,4 @@
-#link
-  Result Demo
+# Demo
   https://kansuji.herokuapp.com/to_kansujis
 
 # Bài tập
