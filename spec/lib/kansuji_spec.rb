@@ -915,8 +915,7 @@ describe "random" do
       10000.times do |index|
         it "#{index} " do
         exp = rand(75)
-        num = rand(10 ** exp)
-        puts "exp: #{"%e" %num}"        # puts "#{num.to_kansuji}: #{num.to_kansuji.to_number}"
+        num = rand(10 ** exp)        # puts "exp: #{"%e" %num}"        # puts "#{num.to_kansuji}: #{num.to_kansuji.to_number}"
         expect(num.to_kansuji.to_number).to eq(num)
       end
     end
