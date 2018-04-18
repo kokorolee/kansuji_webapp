@@ -1,0 +1,29 @@
+NUMS_HASH = { 0 => '零', 1 => '一', 2 => '二', 3 => '三', 4 => '四', 5 => '五', 6 => '六', 7 => '七', 8 => '八', 9 => '九'}
+UNIT_HASH = { 10 ** 1 => '十', 10 ** 2 => '百', 10 ** 3 => '千'}
+EXP_HASH = { 10 ** (4)  => '万', 10 ** (4*2) => '億', 10 ** (4*3) => '兆' , 10 ** (4*4) => '京', 10 ** (4*5) => '垓', 10 ** (4*6) => '𥝱', 10 ** (4*7) => '穣', 10 ** (4*8) => '溝', 10 ** (4*9) => '澗', 10 ** (4*10) => '正', 10 ** (4*11) => '載', 10 ** (4*12) => '極', 10 ** (4*13) => '恒河沙', 10 ** (4*14) => '阿僧祇', 10 ** (4*15) => '那由他', 10 ** (4*16) => '不可思議', 10 ** (4*17) => '無量大数' }
+
+EXP_HASH = { '万' => 10 ** 4, '億' => 10 ** 8, '兆' => 10 ** 12, '京' => 10 ** 16, '垓' => 10 ** 20, '𥝱' => 10 ** 24, '穣' => 10 ** 28, '溝' => 10 ** 32, '澗' => 10 ** 36, '正' => 10 ** 40, '載' => 10 ** 44, '極' => 10 ** 48, '恒河沙' => 10 ** 52, '阿僧祇' => 10 ** 56, '那由他' => 10 ** 60, '不可思議' => 10 ** 64, '無量大数' => 10 ** 68' }
+
+
+#
+# class String
+#   def to_number(result = 0, temp2 = [])
+#     result = 0 if self == "零"
+#     EXP_HASH.each { |key, val|  self.sub!(val,'\&,') }
+#     temp1 = self.split(",")    #print "\n temp1"    print temp1    print "\n"
+#     temp1.each do |num|
+#       temp2 << num.split(",") if EXP_HASH.each{ |key, val| num.sub!(val,',\&')}
+#     end    #print "\n temp2"    print temp2    print "\n"
+#     return result if temp2.each do |num|
+#       ac_num = 0
+#       kan2num = 1
+#       kan2num = EXP_HASH.key(num[1]) unless num[1] == nil
+#       UNIT_HASH.each { |key, val| num[0].sub!(val,'\&,') }
+#       temp3 = num[0].split(",")      #print "\n temp3"      print temp3      print "\n"
+#       result += ac_num * kan2num if temp3.each do |n|
+#           next ac_num += (NUMS_HASH.key(n[0]).to_i) * (UNIT_HASH.key(n[1])) if (!n[1].nil?)
+#           ac_num += NUMS_HASH.key(n[0]).to_i  + UNIT_HASH.key(n[0]).to_i
+#       end
+#     end
+#   end
+# end

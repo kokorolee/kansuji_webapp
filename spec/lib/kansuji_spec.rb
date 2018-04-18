@@ -353,32 +353,21 @@ describe 'Kansuji' do
   context '10 ** 1 ' do
     it '0' do
       0.to_kansuji.should == '零'
-      # '一'.to_number.should == '1'
     end
     it '1' do
       1.to_kansuji.should == '一'
-      # '一'.to_number.should == '1'
     end
-    # it '01' do
-      # 01.to_kansuji.should == '一'
-    # end
     it '10' do
       10.to_kansuji.should == '十'
-      # '十'.to_number.should == '10'
     end
     it '11' do
       11.to_kansuji.should == '十一'
-      # '十一.to_kansuji.should == '11'
     end
     it '23' do
       23.to_kansuji.should == '二十三'
-      # '二十三.to_kansuji.should == '23'
     end
   end
   context '10 ** 2 ' do
-    # it '010' do
-      # 010.to_kansuji.should == '十'
-    # end
     it '100' do
       100.to_kansuji.should == '百'
     end
@@ -426,9 +415,6 @@ describe 'Kansuji' do
     it '1000000' do
       1000000.to_kansuji.should == '百万'
     end
-    # it '01000000' do
-      # 01000000.to_kansuji.should == '百万'
-    # end
     it '1000001' do
       1000001.to_kansuji.should == '百万一'
     end
@@ -440,9 +426,6 @@ describe 'Kansuji' do
     it '10000000' do
       10000000.to_kansuji.should == '千万'
     end
-    # it '010000000' do
-      # 010000000.to_kansuji.should == '千万'
-    # end
     it '10000001' do
       10000001.to_kansuji.should == '千万一'
     end
@@ -454,9 +437,6 @@ describe 'Kansuji' do
     it '100000000' do
       100000000.to_kansuji.should == '一億'
     end
-    # it '0100000000' do
-      # 0100000000.to_kansuji.should == '一億'
-    # end
     it '100000001' do
       100000001.to_kansuji.should == '一億一'
     end
@@ -468,9 +448,6 @@ describe 'Kansuji' do
     it '1000000000' do
       1000000000.to_kansuji.should == '十億'
     end
-    # it '01000000000' do
-      # 01000000000.to_kansuji.should == '十億'
-    # end
     it '1000000001' do
       1000000001.to_kansuji.should == '十億一'
     end
@@ -482,9 +459,6 @@ describe 'Kansuji' do
     it '10000000000' do
       10000000000.to_kansuji.should == '百億'
     end
-    # it '010000000000' do
-      # 010000000000.to_kansuji.should == '百億'
-    # end
     it '10000000001' do
       10000000001.to_kansuji.should == '百億一'
     end
@@ -496,9 +470,6 @@ describe 'Kansuji' do
     it '100000000000' do
       100000000000.to_kansuji.should == '千億'
     end
-    # it '0100000000000' do
-      # 0100000000000.to_kansuji.should == '千億'
-    # end
     it '100000000001' do
       100000000001.to_kansuji.should == '千億一'
     end
@@ -510,9 +481,6 @@ describe 'Kansuji' do
     it '1000000000000' do
       1000000000000.to_kansuji.should == '一兆'
     end
-    # it '01000000000000' do
-      # 01000000000000.to_kansuji.should == '一兆'
-    # end
     it '1000000000001' do
       1000000000001.to_kansuji.should == '一兆一'
     end
@@ -527,9 +495,6 @@ describe 'Kansuji' do
     it '10000000000000' do
       10000000000000.to_kansuji.should == '十兆'
     end
-    # it '010000000000000' do
-      # 010000000000000.to_kansuji.should == '十兆'
-    # end
     it '10000000000001' do
       10000000000001.to_kansuji.should == '十兆一'
     end
@@ -541,9 +506,6 @@ describe 'Kansuji' do
     it '100000000000000' do
       100000000000000.to_kansuji.should == '百兆'
     end
-    # it '0100000000000000' do
-      # 0100000000000000.to_kansuji.should == '百兆'
-    # end
     it '100000000000001' do
       100000000000001.to_kansuji.should == '百兆一'
     end
@@ -555,9 +517,6 @@ describe 'Kansuji' do
     it '1000000000000000' do
       1000000000000000.to_kansuji.should == '千兆'
     end
-    # it '01000000000000000' do
-      # 01000000000000000.to_kansuji.should == '千兆'
-    # end
     it '1000000000000001' do
       1000000000000001.to_kansuji.should == '千兆一'
     end
@@ -572,9 +531,6 @@ describe 'Kansuji' do
     it '10000000000000000' do
       10000000000000000.to_kansuji.should == '一京'
     end
-    # it '010000000000000000' do
-      # 010000000000000000.to_kansuji.should == '一京'
-    # end
     it '10000000000000001' do
       10000000000000001.to_kansuji.should == '一京一'
     end
@@ -586,9 +542,6 @@ describe 'Kansuji' do
     it '100000000000000000' do
       100000000000000000.to_kansuji.should == '十京'
     end
-    # it '0100000000000000000' do
-      # 0100000000000000000.to_kansuji.should == '十京'
-    # end
     it '100000000000000001' do
       100000000000000001.to_kansuji.should == '十京一'
     end
@@ -600,9 +553,6 @@ describe 'Kansuji' do
     it '1000000000000000000' do
       1000000000000000000.to_kansuji.should == '百京'
     end
-    # it '01000000000000000000' do
-      # 01000000000000000000.to_kansuji.should == '百京'
-    # end
     it '1000000000000000001' do
       1000000000000000001.to_kansuji.should == '百京一'
     end
@@ -614,9 +564,6 @@ describe 'Kansuji' do
     it '10000000000000000000' do
       10000000000000000000.to_kansuji.should == '千京'
     end
-    # it '010000000000000000000' do
-      # 010000000000000000000.to_kansuji.should == '千京'
-    # end
     it '10000000000000000001' do
       10000000000000000001.to_kansuji.should == '千京一'
     end
@@ -628,9 +575,6 @@ describe 'Kansuji' do
     it '100000000000000000000' do
       100000000000000000000.to_kansuji.should == '一垓'
     end
-    # it '0100000000000000000000' do
-      # 0100000000000000000000.to_kansuji.should == '一垓'
-    # end
     it '100000000000000000001' do
       100000000000000000001.to_kansuji.should == '一垓一'
     end
@@ -645,9 +589,6 @@ describe 'Kansuji' do
     it '1000000000000000000000' do
       1000000000000000000000.to_kansuji.should == '十垓'
     end
-    # it '01000000000000000000000' do
-      # 01000000000000000000000.to_kansuji.should == '十垓'
-    # end
     it '1000000000000000000001' do
       1000000000000000000001.to_kansuji.should == '十垓一'
     end
@@ -659,9 +600,6 @@ describe 'Kansuji' do
     it '10000000000000000000000' do
       10000000000000000000000.to_kansuji.should == '百垓'
     end
-    # it '010000000000000000000000' do
-      # 010000000000000000000000.to_kansuji.should == '百垓'
-    # end
     it '10000000000000000000001' do
       10000000000000000000001.to_kansuji.should == '百垓一'
     end
@@ -673,9 +611,6 @@ describe 'Kansuji' do
     it '100000000000000000000000' do
       100000000000000000000000.to_kansuji.should == '千垓'
     end
-    # it '0100000000000000000000000' do
-      # 0100000000000000000000000.to_kansuji.should == '千垓'
-    # end
     it '100000000000000000000001' do
       100000000000000000000001.to_kansuji.should == '千垓一'
     end
@@ -687,18 +622,12 @@ describe 'Kansuji' do
     it '1000000000000000000000000' do
       1000000000000000000000000.to_kansuji.should == '一𥝱'
     end
-    # it '01000000000000000000000000' do
-      # 01000000000000000000000000.to_kansuji.should == '一𥝱'
-    # end
     it '1000000000000000000000001' do
       1000000000000000000000001.to_kansuji.should == '一𥝱一'
     end
     it '1000000000000100000001001' do
       1000000000000100000001001.to_kansuji.should == '一𥝱千億千一'
     end
-    # it '4000006000000000000000000' do
-    #   04000006000000000000000000.to_kansuji.should == '四𥝱六百京'
-    # end
     it '5095857806951230410954699' do
       5095857806951230410954699.to_kansuji.should == '五𥝱九百五十八垓五千七百八十京六千九百五十一兆二千三百四億千九十五万四千六百九十九'
     end
@@ -981,13 +910,15 @@ describe "to_number" do
 
 end
 
-# describe "random" do
-#   context "mutual try" do
-#     it do
-#       10000.times do
-#         num = rand(1000000000000000000000000000000000000000000000000000000000000000000)
-#         expect(num.to_kansuji.to_number).to eq(num)
-#       end
-#     end
-#   end
-# end
+describe "random" do
+  context "mutual try" do
+      10000.times do |index|
+        it "#{index} " do
+        exp = rand(75)
+        num = rand(10 ** exp)
+        puts "exp: #{"%e" %num}"        # puts "#{num.to_kansuji}: #{num.to_kansuji.to_number}"
+        expect(num.to_kansuji.to_number).to eq(num)
+      end
+    end
+  end
+end
