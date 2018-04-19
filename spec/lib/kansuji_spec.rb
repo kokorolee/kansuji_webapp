@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'kansuji-toan'
+require 'kansuji'
 
 # require "spec_helper"
 

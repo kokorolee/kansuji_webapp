@@ -8,7 +8,7 @@ class Numeric
     reverse_array = self.to_s.reverse.split('').each_slice(4).reverse_each
     arr_size = reverse_array.size
     rs.join if reverse_array.each do | val |
-      next arr_size -= 1 if val.reverse.join().to_i == 0
+      next (arr_size -= 1) if val.reverse.join().to_i == 0
       if val.reverse.join() != 0
         rs << val.reverse.join().to_i.group_f_to
         rs << EXP_HASH[10 ** (4 * (arr_size - 1))]
@@ -20,8 +20,8 @@ class Numeric
   def group_f_to arr_input = self.to_s.split(''), curr = ''
     begin
       next if arr_input[0].to_i == 0
-      return curr += NUMS_HASH[arr_input[0].to_i].to_s if arr_input.length == 1
-      next curr += UNIT_HASH[10**(arr_input.length-1)].to_s if arr_input[0].to_i == 1 && arr_input[1] != 0
+      return (curr += NUMS_HASH[arr_input[0].to_i].to_s) if arr_input.length == 1
+      next (curr += UNIT_HASH[10**(arr_input.length-1)].to_s) if arr_input[0].to_i == 1 && arr_input[1] != 0
       curr += (NUMS_HASH[arr_input[0].to_i] + UNIT_HASH[10**(arr_input.length-1)]).to_s
     end while arr_input.slice!(0)
     curr
@@ -37,11 +37,11 @@ class String
     return result if temp2.each do |num|
       ac_num = 0
       kan2num = 1
-      kan2num = EXP_HASH.key(num[1]) unless num[1].nil?
+      kan2num = EXP_HASH.key(num[1]) if num[1]
       UNIT_HASH.each { |key, val| num[0].sub!(val,'\&,') }
       temp3 = num[0].split(",")
-      result += ac_num * kan2num if temp3.each do |n|
-          next ac_num += (NUMS_HASH.key(n[0]).to_i) * (UNIT_HASH.key(n[1])) if n[1]
+      (result += ac_num * kan2num) if temp3.each do |n|
+          next (ac_num += (NUMS_HASH.key(n[0]).to_i) * (UNIT_HASH.key(n[1]))) if n[1]
           ac_num += NUMS_HASH.key(n[0]).to_i  + UNIT_HASH.key(n[0]).to_i
       end
     end
