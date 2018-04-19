@@ -1,0 +1,23 @@
+.container
+  h1.text-center
+    |Number to Kanji
+  div.form-group
+    form.text-center action=to_kansujis_path
+      input.col-xs-12.form-control.input__margin--top-bottom.height__input--row2 name='input' type='text' rows='2'
+      input.btn.btn-primary type='submit' value='Translate to Kanji'
+  .panel.panel-info
+    .panel-heading
+      h4
+        | Your input:
+        = " #{"%e" %@input}"
+    .panel-body
+      h3
+        = @input
+  .panel.panel-success
+    .panel-heading
+      h4 Result:
+    .panel-body
+      h3
+        = @result
+=render 'layouts/link_to_orther'
+= render 'layouts/footer'
